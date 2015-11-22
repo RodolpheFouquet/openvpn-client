@@ -61,23 +61,18 @@ vpn() { local server="$1" user="$2" pass="$3" \
             conf="/vpn/vpn.conf" auth="/vpn/vpn.auth"
 
     cat >$conf <<-EOF
-		client
-		dev tun
-		proto udp
-		remote $server 1194
-		resolv-retry infinite
-		nobind
-		persist-key
-		persist-tun
+    client
+    dev tun
+    proto udp
+    resolv-retry infinite
+    remote $server 1194
+    nobind
+    persist-key
+    persist-tun
+    auth-user-pass
+    ns-cert-type server
+    verb 3
 		ca /vpn/vpn-ca.crt
-		tls-client
-		remote-cert-tls server
-		auth-user-pass
-		comp-lzo
-		verb 1
-		reneg-sec 0
-		redirect-gateway def1
-		auth-user-pass $auth
 		EOF
 
     echo "$user" >$auth
