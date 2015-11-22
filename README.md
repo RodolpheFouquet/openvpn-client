@@ -1,4 +1,6 @@
-[![logo](https://raw.githubusercontent.com/tamareu/openvpn-client/master/logo.png)](https://openvpn.net/)
+[![logo](logo.png)](https://openvpn.net/)
+
+Forked from https://github.com/dperson/openvpn-client
 
 # OpenVPN
 
