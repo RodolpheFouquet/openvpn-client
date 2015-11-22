@@ -73,6 +73,7 @@ vpn() { local server="$1" user="$2" pass="$3" \
     ns-cert-type server
     verb 3
 		ca /vpn/vpn-ca.crt
+    auth-user-pass $auth
 		EOF
 
     echo "$user" >$auth
